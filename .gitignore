@@ -1,0 +1,47 @@
+# Nix build outputs
+/result
+/result-*
+*.drv
+
+# NixOS VM disks and generated images
+*.qcow2
+*.qcow2.*
+*.img
+*.raw
+*.iso
+
+# Local development environments
+.direnv/
+.env
+.env.*
+!.env.example
+
+# Plaintext secrets and private material
+.secrets/
+secrets/local/
+secrets/plaintext/
+*.secret
+*.private
+*.pem
+*.key
+id_rsa
+id_rsa.*
+id_ed25519
+id_ed25519.*
+
+# Editor and operating-system files
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Python-generated files
+__pycache__/
+*.py[cod]
+
+# Local backups
+*.bak
+*.backup
+*.orig

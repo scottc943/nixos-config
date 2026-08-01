@@ -1,0 +1,159 @@
+@define-color bg rgba(17, 17, 27, 0.72);
+@define-color bg2 rgba(30, 30, 46, 0.88);
+@define-color fg #cdd6f4;
+@define-color muted #a6adc8;
+@define-color blue #89b4fa;
+@define-color mauve #cba6f7;
+@define-color green #a6e3a1;
+@define-color yellow #f9e2af;
+@define-color red #f38ba8;
+@define-color border rgba(203, 166, 247, 0.38);
+
+* {
+    font-family: "JetBrainsMono Nerd Font", "Symbols Nerd Font", sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    border: none;
+    min-height: 0;
+}
+
+window#waybar {
+    background: transparent;
+    color: @fg;
+}
+
+.modules-left,
+.modules-center,
+.modules-right {
+    background: @bg;
+    border: 1px solid @border;
+    border-radius: 18px;
+    padding: 4px 8px;
+    margin: 0 4px;
+    box-shadow: 0 0 18px rgba(0, 0, 0, 0.30);
+}
+
+#custom-launcher {
+    color: @mauve;
+    font-size: 18px;
+    padding: 0 12px 0 10px;
+}
+
+#clock {
+    color: @mauve;
+    background: @bg2;
+    border-radius: 14px;
+    padding: 0 14px;
+    margin: 0 2px;
+}
+
+#custom-weather,
+#pulseaudio,
+#network,
+#cpu,
+#memory,
+#temperature,
+#tray,
+#custom-power {
+    background: transparent;
+    color: @fg;
+    padding: 0 9px;
+    margin: 0 2px;
+    border-radius: 12px;
+}
+
+#custom-weather {
+    color: @blue;
+}
+
+#pulseaudio {
+    color: @green;
+}
+
+#network {
+    color: @blue;
+}
+
+#cpu,
+#memory {
+    color: @mauve;
+}
+
+#temperature {
+    color: @yellow;
+}
+
+#temperature.critical {
+    color: @red;
+}
+
+#custom-power {
+    color: @red;
+    font-size: 16px;
+    padding: 0 12px;
+}
+
+#custom-power:hover,
+#custom-launcher:hover,
+#pulseaudio:hover,
+#network:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+tooltip {
+    background: rgba(17, 17, 27, 0.96);
+    color: @fg;
+    border: 1px solid @border;
+    border-radius: 14px;
+    padding: 8px;
+}
+
+tooltip label {
+    color: @fg;
+}
+
+#custom-mango-tag-1,
+#custom-mango-tag-2,
+#custom-mango-tag-3 {
+    color: @muted;
+    background: rgba(255, 255, 255, 0.035);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 0 11px;
+    margin: 0 3px;
+    min-width: 14px;
+}
+
+#custom-mango-tag-1.mango-active,
+#custom-mango-tag-2.mango-active,
+#custom-mango-tag-3.mango-active {
+    color: @bg;
+    background: linear-gradient(135deg, @mauve, @blue);
+    border-color: rgba(137, 180, 250, 0.75);
+    box-shadow: 0 0 14px rgba(137, 180, 250, 0.45);
+}
+
+#custom-mango-tag-1.mango-occupied,
+#custom-mango-tag-2.mango-occupied,
+#custom-mango-tag-3.mango-occupied {
+    color: @fg;
+    background: rgba(137, 180, 250, 0.12);
+    border-color: rgba(137, 180, 250, 0.22);
+}
+
+#custom-mango-tag-1.mango-empty,
+#custom-mango-tag-2.mango-empty,
+#custom-mango-tag-3.mango-empty {
+    color: @muted;
+    background: rgba(255, 255, 255, 0.025);
+    border-color: rgba(255, 255, 255, 0.04);
+    opacity: 0.72;
+}
+
+#custom-mango-tag-1:hover,
+#custom-mango-tag-2:hover,
+#custom-mango-tag-3:hover {
+    color: @fg;
+    background: rgba(203, 166, 247, 0.22);
+    opacity: 1;
+}

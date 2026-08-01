@@ -1,0 +1,134 @@
+configuration {
+    modi: "drun";
+    show-icons: true;
+    icon-theme: "Papirus-Dark";
+    drun-display-format: "{name}";
+    display-drun: "Apps";
+    matching: "fuzzy";
+    sort: true;
+}
+
+* {
+    bg: #11111b;
+    bg-alt: #181825;
+    card: #1e1e2e;
+    card-hover: #313244;
+    fg: #cdd6f4;
+    muted: #a6adc8;
+    accent: #89b4fa;
+    accent2: #cba6f7;
+    border: #45475a;
+
+    font: "JetBrainsMono Nerd Font 13";
+}
+
+window {
+    location: center;
+    anchor: center;
+    width: 70%;
+    height: 72%;
+    background-color: @bg;
+    border: 2px;
+    border-color: @accent2;
+    border-radius: 18px;
+    padding: 22px;
+}
+
+mainbox {
+    background-color: @bg;
+    spacing: 18px;
+    children: [ inputbar, listview ];
+}
+
+inputbar {
+    background-color: @bg-alt;
+    border: 1px;
+    border-color: @border;
+    border-radius: 14px;
+    padding: 14px 16px;
+    spacing: 12px;
+    children: [ prompt, entry ];
+}
+
+prompt {
+    background-color: transparent;
+    text-color: @accent2;
+    font: "JetBrainsMono Nerd Font Bold 14";
+    padding: 0 8px 0 0;
+}
+
+textbox-prompt-colon {
+    background-color: transparent;
+    text-color: @accent2;
+}
+
+entry {
+    background-color: transparent;
+    text-color: @fg;
+    placeholder: "Search applications...";
+    placeholder-color: @muted;
+}
+
+listview {
+    background-color: @bg;
+    columns: 5;
+    lines: 4;
+    spacing: 12px;
+    cycle: true;
+    dynamic: true;
+    scrollbar: true;
+    fixed-height: true;
+}
+
+element {
+    background-color: @card;
+    text-color: @fg;
+    border: 1px;
+    border-color: @border;
+    border-radius: 14px;
+    padding: 14px;
+    orientation: vertical;
+    spacing: 8px;
+}
+
+element normal.normal {
+    background-color: @card;
+    text-color: @fg;
+}
+
+element alternate.normal {
+    background-color: @card;
+    text-color: @fg;
+}
+
+element selected.normal {
+    background-color: @card-hover;
+    text-color: @accent;
+    border-color: @accent;
+}
+
+element-icon {
+    background-color: transparent;
+    size: 52px;
+    horizontal-align: 0.5;
+}
+
+element-text {
+    background-color: transparent;
+    text-color: inherit;
+    horizontal-align: 0.5;
+    vertical-align: 0.5;
+}
+
+scrollbar {
+    width: 8px;
+    border-radius: 8px;
+    background-color: @bg-alt;
+    handle-color: @accent2;
+}
+
+message,
+textbox {
+    background-color: @bg;
+    text-color: @fg;
+}

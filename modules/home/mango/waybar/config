@@ -1,0 +1,114 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 36,
+  "spacing": 8,
+  "margin-top": 6,
+  "margin-left": 10,
+  "margin-right": 10,
+
+  "modules-left": [
+    "custom/launcher",
+    "custom/mango-tag-1",
+    "custom/mango-tag-2",
+    "custom/mango-tag-3"
+  ],
+
+  "modules-center": [
+    "clock"
+  ],
+
+  "modules-right": [
+    "custom/weather",
+    "pulseaudio",
+    "network",
+    "cpu",
+    "memory",
+    "temperature",
+    "tray",
+    "custom/power"
+  ],
+
+  "custom/launcher": {
+    "format": "󰣇",
+    "tooltip": false,
+    "on-click": "rofi -show drun"
+  },
+
+  "clock": {
+    "format": "󰥔 {:%a %b %d  %I:%M %p}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+  },
+
+  "custom/weather": {
+    "exec": "~/.config/waybar/scripts/weather.sh",
+    "return-type": "json",
+    "interval": 900,
+    "format": "{}",
+    "tooltip": true
+  },
+
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": "󰝟 muted",
+    "format-icons": {
+      "default": ["󰕿", "󰖀", "󰕾"]
+    },
+    "on-click": "pavucontrol"
+  },
+
+  "network": {
+    "format-wifi": "󰤨 {essid}",
+    "format-ethernet": "󰈀 wired",
+    "format-disconnected": "󰤭 offline",
+    "tooltip-format": "{ifname}: {ipaddr}"
+  },
+
+  "cpu": {
+    "format": "󰻠 {usage}%"
+  },
+
+  "memory": {
+    "format": "󰍛 {}%"
+  },
+
+  "temperature": {
+    "format": "󰔏 {temperatureC}°C",
+    "critical-threshold": 85
+  },
+
+  "tray": {
+    "icon-size": 16,
+    "spacing": 8
+  },
+
+  "custom/mango-tag-1": {
+    "exec": "~/.config/waybar/scripts/mango-tag.sh label 1",
+    "return-type": "json",
+    "interval": 1,
+    "signal": 8,
+    "on-click": "~/.config/waybar/scripts/mango-tag.sh switch 1"
+  },
+
+  "custom/mango-tag-2": {
+    "exec": "~/.config/waybar/scripts/mango-tag.sh label 2",
+    "return-type": "json",
+    "interval": 1,
+    "signal": 8,
+    "on-click": "~/.config/waybar/scripts/mango-tag.sh switch 2"
+  },
+
+  "custom/mango-tag-3": {
+    "exec": "~/.config/waybar/scripts/mango-tag.sh label 3",
+    "return-type": "json",
+    "interval": 1,
+    "signal": 8,
+    "on-click": "~/.config/waybar/scripts/mango-tag.sh switch 3"
+  },
+
+  "custom/power": {
+    "format": "⏻",
+    "tooltip": false,
+    "on-click": "wlogout"
+  }
+}

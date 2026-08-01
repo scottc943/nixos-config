@@ -1,0 +1,108 @@
+configuration {
+    modi: "drun";
+    show-icons: true;
+    icon-theme: "Papirus-Dark";
+    drun-display-format: "{name}";
+    display-drun: "Apps";
+    sidebar-mode: false;
+}
+
+* {
+    bg: rgba(17, 17, 27, 0.86);
+    bg2: rgba(30, 30, 46, 0.92);
+    fg: #cdd6f4;
+    muted: #a6adc8;
+    accent: #cba6f7;
+    accent2: #89b4fa;
+    selected: rgba(137, 180, 250, 0.24);
+    border: rgba(203, 166, 247, 0.45);
+
+    font: "JetBrainsMono Nerd Font 12";
+}
+
+window {
+    location: center;
+    anchor: center;
+    width: 72%;
+    height: 76%;
+    border: 1px;
+    border-color: @border;
+    border-radius: 26px;
+    background-color: @bg;
+    padding: 22px;
+}
+
+mainbox {
+    background-color: transparent;
+    spacing: 18px;
+    children: [ inputbar, listview ];
+}
+
+inputbar {
+    background-color: @bg2;
+    border: 1px;
+    border-color: @border;
+    border-radius: 18px;
+    padding: 14px 18px;
+    spacing: 12px;
+    children: [ prompt, entry ];
+}
+
+prompt {
+    text-color: @accent;
+    font: "JetBrainsMono Nerd Font Bold 13";
+}
+
+entry {
+    text-color: @fg;
+    placeholder: "Search apps...";
+    placeholder-color: @muted;
+}
+
+listview {
+    background-color: transparent;
+    columns: 5;
+    lines: 4;
+    spacing: 12px;
+    cycle: true;
+    dynamic: true;
+    scrollbar: true;
+    fixed-height: true;
+}
+
+element {
+    background-color: rgba(255, 255, 255, 0.04);
+    border: 1px;
+    border-color: rgba(255, 255, 255, 0.07);
+    border-radius: 18px;
+    padding: 14px 10px;
+    orientation: vertical;
+    spacing: 8px;
+}
+
+element selected {
+    background-color: @selected;
+    border-color: @accent2;
+}
+
+element-icon {
+    size: 48px;
+    horizontal-align: 0.5;
+}
+
+element-text {
+    text-color: @fg;
+    horizontal-align: 0.5;
+    vertical-align: 0.5;
+}
+
+element selected element-text {
+    text-color: @fg;
+}
+
+scrollbar {
+    width: 6px;
+    border-radius: 8px;
+    handle-color: @accent;
+    background-color: rgba(255, 255, 255, 0.06);
+}
