@@ -14,6 +14,8 @@
       "steam-original"
       "steam-run"
       "steam-unwrapped"
+      "nvidia-settings"
+      "nvidia-x11"
       "vscode"
     ];
 }

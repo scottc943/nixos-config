@@ -37,5 +37,18 @@
           ./hosts/desktop-vm
         ];
       };
+
+      nixosConfigurations.desktop = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = { inherit inputs; };
+
+        modules = [
+          mangowm.nixosModules.mango
+          nix-flatpak.nixosModules.nix-flatpak
+          home-manager.nixosModules.home-manager
+          ./hosts/desktop
+        ];
+      };
+
     };
 }
