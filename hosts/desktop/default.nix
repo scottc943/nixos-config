@@ -33,8 +33,10 @@
     efi.canTouchEfiVariables = true;
   };
 
-  # The installer created /nix as its own Btrfs subvolume, so compression
-  # must be enabled for that mount separately from the root filesystem.
+  # Btrfs compression.
+  #
+  # /nix is a separate Btrfs subvolume on this installation, so it
+  # receives its own mount options.
   fileSystems."/".options = lib.mkAfter [
     "compress=zstd:3"
     "noatime"
@@ -118,9 +120,20 @@
   };
 
   home-manager = {
+    # The graphical NixOS installer creates ~/.config/user-dirs.dirs
+    # before Home Manager's first activation. Home Manager is supposed
+    # to own this file, so explicitly permit it to replace the
+    # installer-created copy.
+    sharedModules = [
+      {
+        xdg.configFile."user-dirs.dirs".force = true;
+      }
+    ];
+
     useGlobalPkgs = true;
     useUserPackages = true;
     extraSpecialArgs = { inherit inputs; };
+
     users.scott = import ../../home/scott;
   };
 

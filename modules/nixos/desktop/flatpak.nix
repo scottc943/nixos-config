@@ -1,7 +1,6 @@
 { ... }:
+
 {
-  # These are managed system-wide. Applications installed manually outside
-  # this declaration are removed during activation.
   services.flatpak = {
     enable = true;
 
@@ -20,6 +19,7 @@
       "org.vinegarhq.Sober"
     ];
 
+    # This Nix configuration is the source of truth for system Flatpaks.
     uninstallUnmanaged = true;
 
     update = {
