@@ -61,10 +61,15 @@
     settings.auto-optimise-store = true;
 
     gc = {
+      # Run garbage collection weekly and catch up if the machine
+      # was powered off when the scheduled run was missed.
       automatic = true;
       dates = "weekly";
-      randomizedDelaySec = "45min";
-      options = "--delete-older-than 30d";
+      persistent = true;
+      randomizedDelaySec = "30min";
+
+      # Keep two weeks of NixOS generations available for rollback.
+      options = "--delete-older-than 14d";
     };
   };
 
@@ -136,6 +141,8 @@
 
     users.scott = import ../../home/scott;
   };
+
+  security.pam.services.swaylock = { };
 
   system.stateVersion = "26.05";
 }

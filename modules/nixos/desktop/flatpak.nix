@@ -1,6 +1,15 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
+  # Gear Lever prefers gtk-launch when launching an integrated AppImage.
+  #
+  # gtk-launch is provided by GTK 3. Installing GTK 3 here does NOT
+  # install GNOME or replace Mango; it simply makes the GTK utilities
+  # available on the host.
+  environment.systemPackages = [
+    pkgs.gtk3
+  ];
+
   services.flatpak = {
     enable = true;
 
@@ -19,7 +28,7 @@
       "org.vinegarhq.Sober"
     ];
 
-    # This Nix configuration is the source of truth for system Flatpaks.
+    # Nix is the source of truth for system Flatpaks.
     uninstallUnmanaged = true;
 
     update = {

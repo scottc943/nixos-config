@@ -1,1 +1,0 @@
--- Add personal key mappings here. LazyVim's defaults remain enabled.

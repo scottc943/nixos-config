@@ -3,7 +3,8 @@
   imports = [
     ../../modules/home/mango
     ../../modules/home/apps
-    ../../modules/home/editors/lazyvim
+    ../../modules/home/editors/nvchad
+    ../../modules/home/desktop/lock.nix
   ];
 
   home = {
@@ -34,3 +35,4 @@
     userDirs.createDirectories = true;
   };
 }
+

@@ -6,6 +6,7 @@
     ./gearlever.nix
     ./git.nix
     ./jagex.nix
+    ./qol.nix
     ./jetbrains.nix
   ];
 }
