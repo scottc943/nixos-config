@@ -89,6 +89,8 @@ in
     ../../../assets/wallpapers/NGE4PromoPenPen.png;
 
   xdg.configFile."mango/config.conf".source = ./config.conf;
+xdg.configFile."wlogout/layout".source = ./wlogout/layout;
+xdg.configFile."wlogout/style.css".source = ./wlogout/style.css;
 
   systemd.user.targets.mango-session = {
     Unit = {
