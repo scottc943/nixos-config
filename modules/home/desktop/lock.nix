@@ -11,7 +11,7 @@ in
       show-failed-attempts = true;
 
       # Background image
-      image = ../../../assets/lockscreen.png;
+      image = ../../../assets/lockscreen.jpg;
       scaling = "fill";
 
       # Nice defaults
